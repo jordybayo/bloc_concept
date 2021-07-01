@@ -7,7 +7,7 @@ class SecondScreen extends StatefulWidget {
   SecondScreen({
     Key? key,
     required this.title,
-    required this.color,
+    required this.color, Object? homeScreenKey,
   }) : super(key: key);
 
   final String title;
