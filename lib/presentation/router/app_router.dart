@@ -1,15 +1,12 @@
-
 import 'package:bloc_concept/presentation/screens/home_screen.dart';
 import 'package:bloc_concept/presentation/screens/second_screen.dart';
+import 'package:bloc_concept/presentation/screens/setting_screen.dart';
 import 'package:bloc_concept/presentation/screens/third_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-
-
 class AppRouter {
   Route? onGenerateRoute(RouteSettings settings) {
-    final Object? key = settings.arguments;
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(
@@ -33,12 +30,12 @@ class AppRouter {
             color: Colors.greenAccent,
           ),
         );
+      case '/settings':
+        return MaterialPageRoute(
+          builder: (_) => SettingsScreen(),
+        );
       default:
         return null;
     }
   }
 }
-
-
-
-

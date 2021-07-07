@@ -7,7 +7,8 @@ class SecondScreen extends StatefulWidget {
   SecondScreen({
     Key? key,
     required this.title,
-    required this.color, Object? homeScreenKey,
+    required this.color,
+    Object? homeScreenKey,
   }) : super(key: key);
 
   final String title;
@@ -75,7 +76,8 @@ class _SecondScreenState extends State<SecondScreen> {
               children: [
                 FloatingActionButton(
                   onPressed: () {
-                    BlocProvider.of<CounterCubit>(context).decrement();
+                    // BlocProvider.of<CounterCubit>(context).decrement();
+                    context.read<CounterCubit>().increment();
                   },
                   tooltip: 'decrement',
                   child: Icon(Icons.remove),
