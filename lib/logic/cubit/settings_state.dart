@@ -1,3 +1,5 @@
+
+
 part of 'settings_cubit.dart';
 
 class SettingsState extends Equatable {
@@ -22,4 +24,22 @@ class SettingsState extends Equatable {
 
   @override
   List<Object> get props => [appNotifications, emailNotifications];
+
+  Map<String, dynamic> toMap() {
+    return {
+      'appNotifications': appNotifications,
+      'emailNotifications': emailNotifications,
+    };
+  }
+
+  factory SettingsState.fromMap(Map<String, dynamic> map) {
+    return SettingsState(
+      appNotifications: map['appNotifications'],
+      emailNotifications: map['emailNotifications'],
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory SettingsState.fromJson(String source) => SettingsState.fromMap(json.decode(source));
 }
