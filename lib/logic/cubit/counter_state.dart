@@ -29,4 +29,7 @@ class CounterState extends Equatable {
   String toJson() => json.encode(toMap());
 
   factory CounterState.fromJson(String source) => CounterState.fromMap(json.decode(source));
+
+  @override
+  bool get stringify => true;
 }
